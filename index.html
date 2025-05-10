@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的待办事项</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>我的待办事项</h1>
+
+        <div class="input-section">
+            <h2>添加新任务</h2>
+            <label for="task-category">任务分类:</label>
+            <select id="task-category">
+                <option value="learning">学习</option>
+                <option value="work">工作</option>
+                <option value="life">生活</option>
+            </select>
+
+            <label for="task-input">任务内容:</label>
+            <input type="text" id="task-input" placeholder="请输入任务内容...">
+
+            <label for="due-date">截止时间:</label>
+            <input type="datetime-local" id="due-date">
+
+            <label for="remarks">备注:</label>
+            <textarea id="remarks" placeholder="请输入备注信息..."></textarea>
+
+            <button id="add-task-btn">添加任务</button>
+        </div>
+
+        <div class="tasks-area">
+            <div class="task-column" id="learning-tasks">
+                <h2 class="category-title learning">学习任务</h2>
+                <ul class="task-list">
+                    </ul>
+            </div>
+
+            <div class="task-column" id="work-tasks">
+                <h2 class="category-title work">工作任务</h2>
+                <ul class="task-list">
+                    </ul>
+            </div>
+
+            <div class="task-column" id="life-tasks">
+                <h2 class="category-title life">生活任务</h2>
+                <ul class="task-list">
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

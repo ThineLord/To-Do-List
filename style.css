@@ -1,0 +1,213 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.input-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.input-section h2 {
+    margin-top: 0;
+    color: #555;
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+.input-section input[type="text"],
+.input-section input[type="datetime-local"],
+.input-section select,
+.input-section textarea {
+    width: calc(100% - 22px); /* 减去 padding 和 border */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.input-section textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.input-section button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-section button:hover {
+    background-color: #4cae4c;
+}
+
+.tasks-area {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* 列之间的间距 */
+}
+
+.task-column {
+    flex-basis: 32%; /* 每列占据大约三分之一的空间 */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+}
+
+.category-title {
+    text-align: center;
+    padding: 10px;
+    color: white;
+    border-radius: 4px 4px 0 0; /* 圆角只应用到顶部 */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.learning {
+    background-color: #3498db; /* 学习区颜色 - 蓝色 */
+}
+
+.work {
+    background-color: #e74c3c; /* 工作区颜色 - 红色 */
+}
+
+.life {
+    background-color: #2ecc71; /* 生活区颜色 - 绿色 */
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border-left: 5px solid; /* 用于显示分类颜色 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+.task-item:hover {
+    transform: translateY(-2px);
+}
+
+.task-item.learning-border {
+    border-left-color: #3498db;
+}
+
+.task-item.work-border {
+    border-left-color: #e74c3c;
+}
+
+.task-item.life-border {
+    border-left-color: #2ecc71;
+}
+
+.task-item h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.task-item p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.task-item .task-meta {
+    font-size: 0.8em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.task-item .remarks-text {
+    font-style: italic;
+    color: #666;
+    background-color: #efefef;
+    padding: 8px;
+    border-radius: 3px;
+    margin-top: 8px;
+    white-space: pre-wrap; /* 保留换行和空格 */
+}
+
+.task-item .delete-btn {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right; /* 将按钮浮动到右侧 */
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.task-item .delete-btn:hover {
+    background-color: #c9302c;
+}
+
+/* 清除浮动，确保删除按钮不会影响下方元素布局 */
+.task-item::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* 响应式设计：在较小屏幕上，任务列堆叠显示 */
+@media (max-width: 768px) {
+    .tasks-area {
+        flex-direction: column;
+    }
+    .task-column {
+        margin-bottom: 20px;
+    }
+    .input-section input[type="text"],
+    .input-section input[type="datetime-local"],
+    .input-section select,
+    .input-section textarea {
+        width: 100%; /* 在小屏幕上宽度调整为100% */
+    }
+}
